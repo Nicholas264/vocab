@@ -1,0 +1,76 @@
+@keyframes correct {
+	from {
+		opacity: 1;
+	} to {
+		opacity: 0;
+	}
+}
+
+html,body {
+	background-color: #07093A;
+	overflow: hidden;
+	height: 100%;
+	-webkit-user-select: none;
+}
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+}
+.center>.words {
+	margin:auto;
+}
+.words {
+	width: 300px;
+	height: 400px;
+	color: white;
+	background-color: #909AFF;
+	border-radius: 5px;
+	font-size: 32pt;
+	font-family: Segoe UI;
+	text-align: center;
+}
+.words>.allow {
+	width: 300px;
+	height: 400px;
+	color: white;
+	background-color: #909AFF;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32pt;
+	font-family: Segoe UI;
+	text-align: center;
+}
+.wordback {
+	position: relative;
+	top: 30px;
+}
+.wordfront {
+	position: relative;
+	top: 130px;
+}
+.pos {
+	font-size: 20pt;
+	position: relative;
+	top: 160px;
+}
+.buttonhold {
+	position: fixed;
+	left: 200px;
+	top: 10px;
+}
+.buttonhold>textarea{
+	width:200px;
+	height:100px;
+	resize: none;
+	font-family: Segoe UI;
+}
+.correct {
+	position: fixed;
+	color: #10A900;
+	font-size: 40pt;
+	animation: correct 1s forwards;
+}
