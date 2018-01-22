@@ -4543,7 +4543,8 @@ var index = "";
 var done = [];
 
 document.addEventListener("keydown", submit);
-
+document.addEventListener("click", deff);
+	
 String.prototype.capital = function (ind1,ind2) {
 	let final = [];
 	if (ind1) {
@@ -4572,20 +4573,28 @@ function construct(word) {
 	elem.innerHTML = div;
 }
 
+function deff(e) {
+	if (e.target.id==="defss") {
+		document.getElementById("defss").innerHTML = vals[index].def;
+	}
+}
+
 function submit(e) {
 	if (e.code==="Enter") {
 		if (comp.compareTwoStrings(document.getElementById("def").value.toLowerCase(),vals[index].def.toLowerCase())>.4) {
 			construct();
-			document.getElementById("def").value=""
+			document.getElementById("def").value="";
+			document.getElementById("defss").innerHTML = "";
 			return;
 		}
 		var thing = vals[index].def.toLowerCase().split(";");
 		var similarity;
 		for (var i = thing.length - 1; i >= 0; i--) {
 			var fin;
-			if (comp.compareTwoStrings(document.getElementById("def").value.toLowerCase(),thing[i])) {
+			if (comp.compareTwoStrings(document.getElementById("def").value.toLowerCase(),thing[i])>.5) {
 				construct();
-				document.getElementById("def").value =""
+				document.getElementById("def").value ="";
+				document.getElementById("defss").innerHTML = "";
 				return;
 			}
 		}
