@@ -74,3 +74,11 @@ html,body {
 	font-size: 40pt;
 	animation: correct 1s forwards;
 }
+#defss {
+	position: fixed;
+	top: 200px;
+	right: 100px;
+	width: 150px;
+	height:200px;
+	background-color: blue;
+}
