@@ -4585,6 +4585,9 @@ function submit(e) {
 			construct();
 			document.getElementById("def").value="";
 			document.getElementById("defss").innerHTML = "";
+			vals.splice(index,1);
+			keys.splice(index.1);
+			done.push(keys[index]);
 			return;
 		}
 		var thing = vals[index].def.toLowerCase().split(";");
@@ -4595,6 +4598,9 @@ function submit(e) {
 				construct();
 				document.getElementById("def").value ="";
 				document.getElementById("defss").innerHTML = "";
+				vals.splice(index,1);
+				keys.splice(index.1);
+				done.push(keys[index]);
 				return;
 			}
 		}
