@@ -4539,7 +4539,7 @@ const comp = require('string-similarity');
 var keys = Object.keys(words);
 var vals = Object.values(words);
 var elem = document.getElementById("cardholder");
-var index = "";
+var index = 0;
 var done = [];
 
 document.addEventListener("keydown", submit);
@@ -4562,7 +4562,6 @@ String.prototype.capital = function (ind1,ind2) {
 }
 
 function construct(word) {
-	index = Math.floor(Math.random()*keys.length);
 	var div = `<div id="cardholder" class="center">
 					<div id="word1" class="words">
 						<div class="wordfront">${keys[index].capital()}</div>
@@ -4585,9 +4584,8 @@ function submit(e) {
 			construct();
 			document.getElementById("def").value="";
 			document.getElementById("defss").innerHTML = "";
-			vals.splice(index,1);
-			keys.splice(index,1);
 			done.push(keys[index]);
+			index++;
 			return;
 		}
 		var thing = vals[index].def.toLowerCase().split(";");
@@ -4598,9 +4596,8 @@ function submit(e) {
 				construct();
 				document.getElementById("def").value ="";
 				document.getElementById("defss").innerHTML = "";
-				vals.splice(index,1);
-				keys.splice(index,1);
 				done.push(keys[index]);
+				index++;
 				return;
 			}
 		}
