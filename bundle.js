@@ -4585,7 +4585,7 @@ function submit(e) {
 			index++;
 			construct();
 			document.getElementById("def").value="";
-			document.getElementById("defss").innerHTML = "";
+			document.getElementById("defss").innerHTML = "["+index+"/180]";
 			return;
 		}
 		var thing = vals[index].def.toLowerCase().split(";");
@@ -4597,7 +4597,7 @@ function submit(e) {
 				index++;
 				construct();
 				document.getElementById("def").value ="";
-				document.getElementById("defss").innerHTML = "";
+				document.getElementById("defss").innerHTML = "["+index+"/180]";
 				return;
 			}
 		}
