@@ -4581,11 +4581,11 @@ function deff(e) {
 function submit(e) {
 	if (e.code==="Enter") {
 		if (comp.compareTwoStrings(document.getElementById("def").value.toLowerCase(),vals[index].def.toLowerCase())>.4) {
+			done.push(keys[index]);
+			index++;
 			construct();
 			document.getElementById("def").value="";
 			document.getElementById("defss").innerHTML = "";
-			done.push(keys[index]);
-			index++;
 			return;
 		}
 		var thing = vals[index].def.toLowerCase().split(";");
@@ -4593,11 +4593,11 @@ function submit(e) {
 		for (var i = thing.length - 1; i >= 0; i--) {
 			var fin;
 			if (comp.compareTwoStrings(document.getElementById("def").value.toLowerCase(),thing[i])>.5) {
+				done.push(keys[index]);
+				index++;
 				construct();
 				document.getElementById("def").value ="";
 				document.getElementById("defss").innerHTML = "";
-				done.push(keys[index]);
-				index++;
 				return;
 			}
 		}
